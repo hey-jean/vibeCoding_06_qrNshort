@@ -1,14 +1,16 @@
 * { box-sizing: border-box; }
-:root { --x: 50%; --y: 50%; --accent: #ffc000; --ink: #3b2f12; }
+:root { --x: 50%; --y: 40%; --h: 45; --accent: #ffc000; --ink: #3b2f12; }
 body {
   margin: 0;
   min-height: 100vh;
   font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   color: var(--ink);
-  background:
-    radial-gradient(circle at var(--x) var(--y), #fff3c4 0%, rgba(255,243,196,0) 45%),
-    linear-gradient(135deg, #fffaf0 0%, #ffe9a8 50%, #ffd6e0 100%);
-  transition: background .2s;
+  background-color: #fff6dc;
+  /* 커서 위치에 진한 색 조명 + 커서 x 위치에 따라 색상(hue)이 노랑→주황→분홍→보라로 바뀜 */
+  background-image:
+    radial-gradient(circle 380px at var(--x) var(--y), hsla(var(--h), 100%, 62%, .85) 0%, hsla(var(--h), 100%, 70%, .35) 45%, hsla(var(--h), 100%, 75%, 0) 75%),
+    linear-gradient(135deg, #fff8e1 0%, #ffe08a 50%, #ffc2d4 100%);
+  background-attachment: fixed;
 }
 header { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .back { color: var(--ink); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.7); padding: 8px 14px; border-radius: 999px; }

@@ -7,8 +7,11 @@ const errorEl = document.getElementById('error');
 
 // 마우스 위치에 따라 그라데이션 색이 바뀌게
 document.addEventListener('mousemove', (e) => {
-  document.documentElement.style.setProperty('--x', (e.clientX / window.innerWidth * 100) + '%');
-  document.documentElement.style.setProperty('--y', (e.clientY / window.innerHeight * 100) + '%');
+  const rx = e.clientX / window.innerWidth;
+  const root = document.documentElement.style;
+  root.setProperty('--x', (rx * 100) + '%');
+  root.setProperty('--y', (e.clientY / window.innerHeight * 100) + '%');
+  root.setProperty('--h', Math.round(45 - rx * 105)); // 왼쪽 노랑(45) → 오른쪽 분홍·보라(-60=300)
 });
 
 function normalize(url) {
