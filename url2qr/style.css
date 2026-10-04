@@ -35,9 +35,9 @@ header { padding: 18px 24px; display: flex; align-items: center; justify-content
 .input-row input { flex: 1; min-width: 0; border: 0; outline: 0; font-size: 16px; padding: 10px 16px; border-radius: 999px; background: transparent; }
 .input-row button {
   border: 0; border-radius: 999px; padding: 10px 26px; font-size: 16px; font-weight: 700;
-  background: var(--accent); color: var(--ink); cursor: pointer; transition: transform .1s, background .2s;
+  background: #ec4899; color: #fff; cursor: pointer; transition: transform .1s, background .2s;
 }
-.input-row button:hover { background: #ffb300; }
+.input-row button:hover { background: #db2777; }
 .input-row button:active { transform: scale(.97); }
 .error { color: #c0392b; margin: 10px 0 0; }
 .qr-area { text-align: center; animation: pop .35s ease; }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URL2QR - QR코드 생성기</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header>
@@ -17,15 +17,14 @@
       <p class="hint">QR코드를 클릭하면 JPG 파일로 다운로드돼요</p>
     </section>
     <form id="url-form" class="url-form">
-      <h1>URL을 QR코드로 바꿔 보세요</h1>
       <div class="input-row">
-        <input type="url" id="url-input" placeholder="https://example.com" required>
-        <button type="submit" id="make-btn">확인</button>
+        <input type="url" id="url-input" placeholder="웹사이트 URL을 입력하세요..." required>
+        <button type="submit" id="make-btn">생성하기</button>
       </div>
       <p id="error" class="error" hidden></p>
     </form>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
