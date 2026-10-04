@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+:root { --x: 50%; --y: 50%; --accent: #ffc000; --ink: #3b2f12; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at var(--x) var(--y), #fff3c4 0%, rgba(255,243,196,0) 45%),
+    linear-gradient(135deg, #fffaf0 0%, #ffe9a8 50%, #ffd6e0 100%);
+  transition: background .2s;
+}
+header { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.back { color: var(--ink); text-decoration: none; font-weight: 700; background: rgba(255,255,255,.7); padding: 8px 14px; border-radius: 999px; }
+.back:hover { background: #fff; }
+.logo { height: 44px; display: block; }
+.app {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 20px 40px;
+}
+.url-form { width: 100%; max-width: 560px; text-align: center; transition: transform .4s ease; }
+.url-form h1 { font-size: 26px; margin: 0 0 18px; }
+.app.done .url-form h1 { display: none; }
+.input-row {
+  display: flex; gap: 8px; background: #fff; padding: 8px;
+  border-radius: 999px; box-shadow: 0 8px 28px rgba(201,145,0,.18);
+}
+.input-row input { flex: 1; min-width: 0; border: 0; outline: 0; font-size: 16px; padding: 10px 16px; border-radius: 999px; background: transparent; }
+.input-row button {
+  border: 0; border-radius: 999px; padding: 10px 26px; font-size: 16px; font-weight: 700;
+  background: var(--accent); color: var(--ink); cursor: pointer; transition: transform .1s, background .2s;
+}
+.input-row button:hover { background: #ffb300; }
+.input-row button:active { transform: scale(.97); }
+.error { color: #c0392b; margin: 10px 0 0; }
+.qr-area { text-align: center; animation: pop .35s ease; }
+.qrcode {
+  display: inline-block; padding: 18px; background: #fff; border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(201,145,0,.25); cursor: pointer; transition: transform .15s;
+}
+.qrcode:hover { transform: translateY(-3px); }
+.qrcode:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.hint { font-size: 14px; color: #7a6533; margin: 12px 0 0; }
+@keyframes pop { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+@media (max-width: 480px) { .url-form h1 { font-size: 21px; } .input-row button { padding: 10px 18px; } }
