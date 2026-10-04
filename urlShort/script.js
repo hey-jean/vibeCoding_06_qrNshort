@@ -14,7 +14,7 @@ function normalize(url) {
   try { return new URL(url).href; } catch { return null; }
 }
 
-// CORS를 허용하는 단축 OpenAPI: da.gd (실패하면 spoo.me로 재시도)
+// CORS를 허용하는 단축 OpenAPI: spoo.me (바로 이동됨, 실패하면 da.gd로 재시도)
 async function viaDagd(url) {
   const res = await fetch('https://da.gd/s?url=' + encodeURIComponent(url));
   const text = (await res.text()).trim();
@@ -41,7 +41,7 @@ async function shorten() {
   msg.textContent = '';
   try {
     let short;
-    try { short = await viaDagd(url); } catch { short = await viaSpoo(url); }
+    try { short = await viaSpoo(url); } catch { short = await viaDagd(url); }
     result.value = short;
     copyBtn.disabled = false;
     msg.className = 'msg ok';
