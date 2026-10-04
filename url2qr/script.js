@@ -29,6 +29,7 @@ form.addEventListener('submit', (e) => {
   try {
     qrBox.innerHTML = '';
     new QRCode(qrBox, { text: url, width: 240, height: 240, colorDark: '#3b2f12', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
+    qrBox.title = '클릭하면 JPG로 저장돼요'; // 라이브러리가 넣는 URL 툴팁 대신 안내 문구
     qrArea.hidden = false;
     app.classList.add('done'); // 입력창은 아래로, QR은 가운데로
   } catch (err) {
